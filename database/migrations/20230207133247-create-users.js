@@ -3,8 +3,8 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('users', {
-      
-      userId: {
+
+      user_id: {
         type: Sequelize.STRING,
         primaryKey: true,
         allowNull: false,
@@ -19,10 +19,10 @@ module.exports = {
       fmno: {
         type: Sequelize.STRING
       },
-      currentEngagementIds: {
+      current_engagement_ids: {
         type: Sequelize.ARRAY(Sequelize.STRING)
       },
-      caseStudies: {
+      case_studies: {
         type: Sequelize.ARRAY(Sequelize.STRING)
       },
       skills: {
@@ -34,7 +34,7 @@ module.exports = {
       guild: {
         type: Sequelize.ENUM('swe', 'product', 'data', 'unspecified')
       },
-      pastEngagementId: {
+      past_engagement_id: {
         type: Sequelize.ARRAY(Sequelize.STRING)
       },
       image: {
@@ -44,11 +44,11 @@ module.exports = {
       password: {
         type: Sequelize.TEXT
       },
-      createdAt: {
+      created_at: {
         allowNull: false,
         type: Sequelize.DATE
       },
-      updatedAt: {
+      updated_at: {
         allowNull: false,
         type: Sequelize.DATE
       }

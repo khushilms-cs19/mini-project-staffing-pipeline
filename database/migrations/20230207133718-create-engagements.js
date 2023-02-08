@@ -3,15 +3,11 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('engagements', {
-      id: {
-        allowNull: false,
-        autoIncrement: true,
-        type: Sequelize.INTEGER
-      },
-      engagementId: {
+      engagement_id: {
         type: Sequelize.STRING,
         primaryKey: true,
-        allowNull: false
+        allowNull: false,
+        defaultValue: Sequelize.UUIDV4
       },
       name: {
         type: Sequelize.STRING
@@ -25,29 +21,29 @@ module.exports = {
       guild: {
         type: Sequelize.ENUM('swe', 'product', 'data', 'unspecified')
       },
-      userIds: {
+      user_ids: {
         type: Sequelize.ARRAY(Sequelize.STRING)
       },
-      caseStudyIds: {
+      case_study_ids: {
         type: Sequelize.ARRAY(Sequelize.STRING)
       },
       status: {
         type: Sequelize.ENUM('upcoming', 'ongoing', 'completed', 'unspecified')
       },
-      startDate: {
+      start_date: {
         type: Sequelize.DATE
       },
-      endDate: {
+      end_date: {
         type: Sequelize.DATE
       },
       image: {
         type: Sequelize.STRING
       },
-      createdAt: {
+      created_at: {
         allowNull: false,
         type: Sequelize.DATE
       },
-      updatedAt: {
+      updated_at: {
         allowNull: false,
         type: Sequelize.DATE
       }

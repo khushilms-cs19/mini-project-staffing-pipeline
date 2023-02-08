@@ -3,15 +3,11 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('case_studies', {
-      id: {
-        allowNull: false,
-        autoIncrement: true,
-        type: Sequelize.INTEGER
-      },
-      caseStudyId: {
+      case_study_id: {
         type: Sequelize.STRING,
         primaryKey: true,
-        allowNull: false
+        allowNull: false,
+        defaultValue: Sequelize.UUIDV4
       },
       name: {
         type: Sequelize.STRING
@@ -19,23 +15,23 @@ module.exports = {
       description: {
         type: Sequelize.STRING
       },
-      collaboratorsIds: {
+      collaborators_ids: {
         type: Sequelize.ARRAY(Sequelize.STRING)
       },
       image: {
         type: Sequelize.STRING
       },
-      boxLink: {
+      box_link: {
         type: Sequelize.STRING
       },
-      engagementId: {
+      engagement_id: {
         type: Sequelize.STRING
       },
-      createdAt: {
+      created_at: {
         allowNull: false,
         type: Sequelize.DATE
       },
-      updatedAt: {
+      updated_at: {
         allowNull: false,
         type: Sequelize.DATE
       }
